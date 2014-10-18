@@ -10,6 +10,7 @@
 
 @interface PRHGoalCell ()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *limitLabel;
 @end
 
 CGFloat static cellHeight = 44;
@@ -29,6 +30,12 @@ CGFloat static cellHeight = 44;
 - (void)setGoal:(Goal *)goal
 {
     self.titleLabel.text = goal.title;
+    
+    NSString* dateString;
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"YYYY/MM/dd"];
+    dateString = [formatter stringFromDate:goal.limit];
+    self.limitLabel.text = dateString;
 }
 
 @end

@@ -158,7 +158,7 @@ CGSize const static kPRHBaseCalenderSize = {320, 400};
 {
     Goal *goal = [Goal MR_createEntity];
     goal.title = [self.titleField text];
-    goal.limit = [NSDate date];
+    goal.limit = self.limitDate;
     goal.need = [self.wishField text];
     goal.isAchivement = NO;
     goal.wish = nil;
@@ -186,6 +186,9 @@ CGSize const static kPRHBaseCalenderSize = {320, 400};
             [self saveGoal];
             [self dismissViewControllerAnimated:YES
                                      completion:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"didapper"
+                                                                object:nil
+                                                              userInfo: nil];
         }
     }
     

@@ -19,7 +19,7 @@
 @implementation UIButton (VBFPopFlatButton)
 + (VBFPopFlatButton *)getCunstomPopFlatButton:(id)target selector:(SEL)selector
 {
-    VBFPopFlatButton *flatRoundedButton = [[VBFPopFlatButton alloc]initWithFrame:CGRectMake(240, [UIScreen mainScreen].bounds.size.height - 75, 30, 30)
+    VBFPopFlatButton *flatRoundedButton = [[VBFPopFlatButton alloc]initWithFrame:CGRectMake(250, [UIScreen mainScreen].bounds.size.height - 75, 30, 30)
                                                                       buttonType:buttonAddType
                                                                      buttonStyle:buttonRoundedStyle
                                                            animateToInitialState:YES];

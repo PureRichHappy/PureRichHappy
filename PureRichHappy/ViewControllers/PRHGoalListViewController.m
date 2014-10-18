@@ -35,14 +35,18 @@
     self.pfButton = [UIButton getCunstomPopFlatButton:self
                                              selector:@selector(tapFlatButton:)];
     [self.view addSubview:self.pfButton];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(refreshTableView)
+                                                 name:@"didapper"
+                                               object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    self.goals = [Goal MR_findAll];
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
-                  withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self refreshTableView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -98,6 +102,16 @@
     
     modalVC.transitioningDelegate = self.animator;
     [self presentViewController:modalVC animated:YES completion:nil];   // create animator object with instance of modal view controller
+}
+
+#pragma mark - unko 
+
+- (void)refreshTableView
+{
+    self.goals = [Goal MR_findAllSortedBy:@"limit"
+                                ascending:YES];
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+                  withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 - (void)test:(id)sender

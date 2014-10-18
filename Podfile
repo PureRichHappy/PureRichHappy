@@ -18,6 +18,7 @@ target "PureRichHappy" do
     pod 'JVFloatLabeledTextField'
     pod 'CKCalendar'
     pod 'RDVCalendarView'
+    pod 'AFViewShaker'
 end
 
 target "PureRichHappyTests" do
