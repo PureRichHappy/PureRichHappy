@@ -21,6 +21,7 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - AFViewShaker (0.0.2)
+  - AHKActionSheet (0.4.2)
   - AYVibrantButton (1.0.3)
   - BlocksKit (2.2.5):
     - BlocksKit/All
@@ -59,6 +60,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - AFViewShaker
+  - AHKActionSheet
   - AYVibrantButton
   - BlocksKit
   - CKCalendar
@@ -78,6 +80,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
   AFViewShaker: 40bd7a2725ea81a9472134f27f0086d398d1bf91
+  AHKActionSheet: 5bac772d0e966456257fbb8eefafbea9717ccbbc
   AYVibrantButton: 6ef08db44395e9b819560191a048297be2e8b727
   BlocksKit: 4439e7f30a9f90743462ca63545a15c1f4304cef
   CKCalendar: a361e9851d97e266f4e38dd50e2c57478706cc09

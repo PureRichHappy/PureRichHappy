@@ -11,14 +11,14 @@
 #import "Goal.h"
 #import "ZFModalTransitionAnimator.h"
 #import "JVFloatLabeledTextFieldViewController.h"
+#import <AHKActionSheet.h>
 
 @interface PRHGoalListViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSArray *goals;
 @property (nonatomic, strong) VBFPopFlatButton *pfButton;
 @property (nonatomic, strong) ZFModalTransitionAnimator *animator;
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
-- (IBAction)test:(id)sender;
 - (IBAction)testDelete:(id)sender;
 
 @end
@@ -41,6 +41,15 @@
                                              selector:@selector(refreshTableView)
                                                  name:@"didapper"
                                                object:nil];
+    
+    NSFetchRequest *request = [Goal MR_requestAllWhere:@"isAchivement"
+                                                isEqualTo:@NO];
+    [request setSortDescriptors:@[[[NSSortDescriptor alloc] initWithKey:@"limit"
+                                                              ascending:NO]]];
+    NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:[NSManagedObjectContext MR_defaultContext] sectionNameKeyPath:nil cacheName:nil];
+    [fetchedResultsController performFetch:nil];
+    self.fetchedResultsController = fetchedResultsController;
+    [self.fetchedResultsController performFetch:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -59,18 +68,21 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.goals.count;
-}
+    id<NSFetchedResultsSectionInfo> sectionInfo;
+    sectionInfo = self.fetchedResultsController.sections[section];
+    return [sectionInfo numberOfObjects];}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    NSUInteger section;
+    section = [[self.fetchedResultsController sections] count];
+    return section;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     PRHGoalCell *cell = [tableView dequeueReusableCellWithIdentifier:[PRHGoalCell getCaellIdentifier]];
-    [cell setGoal:self.goals[indexPath.row]];
+    [cell setGoal:[self.fetchedResultsController objectAtIndexPath:indexPath]];
     return cell;
 }
 
@@ -84,7 +96,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    Goal *goal = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    AHKActionSheet *actionSheet = [[AHKActionSheet alloc] initWithTitle:nil];
+    [actionSheet setTitle:goal.title];
+    [actionSheet addButtonWithTitle:@"達成"
+                               type:AHKActionSheetButtonTypeDefault
+                            handler:^(AHKActionSheet *as) {
+                                goal.isAchivement = @YES;
+                                [self refreshTableView];
+                            }];
+    [actionSheet addButtonWithTitle:@"削除" type:AHKActionSheetButtonTypeDestructive
+                            handler:^(AHKActionSheet *actionSheet) {
+                                
+                            }];
+    [actionSheet show];
 }
 
 - (void)tapFlatButton:(id)sender
@@ -108,33 +133,32 @@
 
 - (void)refreshTableView
 {
-    self.goals = [Goal MR_findAllSortedBy:@"limit"
-                                ascending:YES];
+    [self.fetchedResultsController performFetch:nil];
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
                   withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
-- (void)test:(id)sender
-{
-    Goal *goal = [Goal MR_createEntity];
-    
-    int rand = arc4random_uniform(100);
-    goal.title = [NSString stringWithFormat:@"タイトルタイトル %d", rand];
-    goal.limit = [NSDate date];
-    goal.need = @"なんだろう";
-    goal.isAchivement = NO;
-    goal.wish = nil;
-    
-    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-    self.goals = [Goal MR_findAll];
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
-                  withRowAnimation:UITableViewRowAnimationAutomatic];
-}
+//- (void)test:(id)sender
+//{
+//    Goal *goal = [Goal MR_createEntity];
+//    
+//    int rand = arc4random_uniform(100);
+//    goal.title = [NSString stringWithFormat:@"タイトルタイトル %d", rand];
+//    goal.limit = [NSDate date];
+//    goal.need = @"なんだろう";
+//    goal.isAchivement = NO;
+//    goal.wish = nil;
+//    
+//    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+//    self.goals = [Goal MR_findAll];
+//    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+//                  withRowAnimation:UITableViewRowAnimationAutomatic];
+//}
 
 - (void)testDelete:(id)sender
 {
     [Goal MR_truncateAll];
-    self.goals = [Goal MR_findAll];
+    [self refreshTableView];
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
                   withRowAnimation:UITableViewRowAnimationAutomatic];
 }

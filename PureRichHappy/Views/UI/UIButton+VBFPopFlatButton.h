@@ -12,6 +12,7 @@
 
 @interface UIButton (VBFPopFlatButton)
 + (VBFPopFlatButton *)getCunstomPopFlatButton:(id)target selector:(SEL)selector;
++ (VBFPopFlatButton *)getCancelPopFlatButton:(id)target selector:(SEL)selector;
 - (void)tapAnimate;
 
 @end
@@ -19,7 +20,7 @@
 @implementation UIButton (VBFPopFlatButton)
 + (VBFPopFlatButton *)getCunstomPopFlatButton:(id)target selector:(SEL)selector
 {
-    VBFPopFlatButton *flatRoundedButton = [[VBFPopFlatButton alloc]initWithFrame:CGRectMake(250, [UIScreen mainScreen].bounds.size.height - 75, 30, 30)
+    VBFPopFlatButton *flatRoundedButton = [[VBFPopFlatButton alloc]initWithFrame:CGRectMake(270, [UIScreen mainScreen].bounds.size.height - 75, 25, 25)
                                                                       buttonType:buttonAddType
                                                                      buttonStyle:buttonRoundedStyle
                                                            animateToInitialState:YES];
@@ -31,6 +32,22 @@
                 forControlEvents:UIControlEventTouchUpInside];
     return flatRoundedButton;
 }
+
++ (VBFPopFlatButton *)getCancelPopFlatButton:(id)target selector:(SEL)selector
+{
+    VBFPopFlatButton *flatRoundedButton = [[VBFPopFlatButton alloc]initWithFrame:CGRectMake(280, 25, 25, 25)
+                                                                      buttonType:buttonCloseType
+                                                                     buttonStyle:buttonRoundedStyle
+                                                           animateToInitialState:YES];
+    flatRoundedButton.roundBackgroundColor = [UIColor whiteColor];
+    flatRoundedButton.lineThickness = 2;
+    flatRoundedButton.tintColor = [UIColor colorWithRed:.90 green:.33 blue:.22 alpha:1];
+    [flatRoundedButton addTarget:target
+                          action:selector
+                forControlEvents:UIControlEventTouchUpInside];
+    return flatRoundedButton;
+}
+
 
 - (void)tapAnimate
 {

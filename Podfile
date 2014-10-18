@@ -19,6 +19,7 @@ target "PureRichHappy" do
     pod 'CKCalendar'
     pod 'RDVCalendarView'
     pod 'AFViewShaker'
+    pod 'AHKActionSheet'
 end
 
 target "PureRichHappyTests" do

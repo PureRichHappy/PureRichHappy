@@ -33,6 +33,7 @@
 #import "JVFloatLabeledTextView.h"
 #import "Goal.h"
 #import <RDVCalendarView.h>
+#import "UIButton+VBFPopFlatButton.h"
 
 const static CGFloat kJVFieldHeight = 44.0f;
 const static CGFloat kJVFieldHMargin = 10.0f;
@@ -146,6 +147,9 @@ CGSize const static kPRHBaseCalenderSize = {320, 400};
     
     [self.titleField becomeFirstResponder];
     
+    
+    [self.view addSubview:[UIButton getCancelPopFlatButton:self
+                                                  selector:@selector(cancel)]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -160,10 +164,16 @@ CGSize const static kPRHBaseCalenderSize = {320, 400};
     goal.title = [self.titleField text];
     goal.limit = self.limitDate;
     goal.need = [self.wishField text];
-    goal.isAchivement = NO;
+    goal.isAchivement = @NO;
     goal.wish = nil;
     
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+}
+
+- (void)cancel
+{
+    [self dismissViewControllerAnimated:YES
+                             completion:nil];
 }
 
 #pragma mark - text field delegate

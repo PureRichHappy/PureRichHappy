@@ -9,6 +9,7 @@
 #import "PRHGoalCell.h"
 
 @interface PRHGoalCell ()
+@property (weak, nonatomic) IBOutlet UILabel *debugLabel;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *limitLabel;
 @end
@@ -29,6 +30,8 @@ CGFloat static cellHeight = 44;
 
 - (void)setGoal:(Goal *)goal
 {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.debugLabel.text = goal.isAchivement.boolValue ? @"YES" : @"NO";
     self.titleLabel.text = goal.title;
     
     NSString* dateString;
