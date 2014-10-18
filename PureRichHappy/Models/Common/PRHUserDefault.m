@@ -10,5 +10,5 @@
 
 @implementation PRHUserDefault
 @dynamic isDoneTutorial;
-
+@dynamic isDoneAddressBook;
 @end

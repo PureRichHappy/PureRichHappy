@@ -16,8 +16,12 @@
 #import <TOWebViewController.h>
 #import <UIActionSheet+BlocksKit.h>
 #import <MYBlurIntroductionView.h>
+#import <UIAlertView+BlocksKit.h>
 
-@interface PRHGoalListViewController () <UITableViewDataSource, UITableViewDelegate, MYIntroductionDelegate>
+@import AddressBook;
+@import AddressBookUI;
+
+@interface PRHGoalListViewController () <UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate, MYIntroductionDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) VBFPopFlatButton *pfButton;
 @property (nonatomic, strong) ZFModalTransitionAnimator *animator;
@@ -63,6 +67,11 @@
 {
     [super viewDidAppear:animated];
     [self refreshTableView];
+    
+    if ([PRHUserDefault standardUserDefaults].isDoneTutorial.boolValue ) {//&& ![PRHUserDefault standardUserDefaults].isDoneAddressBook.boolValue) {
+        [self showAddressBook];
+        [PRHUserDefault standardUserDefaults].isDoneAddressBook = @YES;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -77,7 +86,8 @@
 {
     id<NSFetchedResultsSectionInfo> sectionInfo;
     sectionInfo = self.fetchedResultsController.sections[section];
-    return [sectionInfo numberOfObjects];}
+    return [sectionInfo numberOfObjects];
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -186,13 +196,13 @@
     
     //You can edit introduction view properties right from the delegate method!
     //If it is the first panel, change the color to green!
-    if (panelIndex == 0) {
-        [introductionView setBackgroundColor:[UIColor colorWithRed:90.0f/255.0f green:175.0f/255.0f blue:113.0f/255.0f alpha:0.65]];
-    }
-    //If it is the second panel, change the color to blue!
-    else if (panelIndex == 1){
-        [introductionView setBackgroundColor:[UIColor colorWithRed:50.0f/255.0f green:79.0f/255.0f blue:133.0f/255.0f alpha:0.65]];
-    }
+//    if (panelIndex == 0) {
+//        [introductionView setBackgroundColor:[UIColor colorWithRed:90.0f/255.0f green:175.0f/255.0f blue:113.0f/255.0f alpha:0.65]];
+//    }
+//    //If it is the second panel, change the color to blue!
+//    else if (panelIndex == 1){
+//        [introductionView setBackgroundColor:[UIColor colorWithRed:50.0f/255.0f green:79.0f/255.0f blue:133.0f/255.0f alpha:0.65]];
+//    }
 }
 
 - (void)introduction:(MYBlurIntroductionView *)introductionView didFinishWithType:(MYFinishType)finishType
@@ -206,6 +216,44 @@
                                                               action:@selector(didTapActionWebView)
                                                     forControlEvents:UIControlEventTouchUpInside];
                        }];   // create animator object with instance of modal view controller
+}
+
+#pragma mark - Addressbook
+
+- (void)showAddressBook{
+    
+    // NSArray *properties = @[@(kABPersonEmailProperty),@(kABPersonPhoneProperty)];
+
+    ABPeoplePickerNavigationController *apnvc = [ABPeoplePickerNavigationController new];
+    apnvc.displayedProperties = [NSArray arrayWithObject:[NSNumber numberWithInt:kABPersonEmailProperty]];
+    apnvc.peoplePickerDelegate = self;
+    [self presentViewController:apnvc animated:YES completion:nil];
+}
+
+- (BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person
+{
+    return YES;
+}
+
+- (BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier
+{
+    // email
+    ABMultiValueRef emailRef = ABRecordCopyValue(person, kABPersonEmailProperty);
+    NSString *email;
+    if (ABMultiValueGetCount(emailRef) > 0) {
+        email = (__bridge NSString *)ABMultiValueCopyValueAtIndex(emailRef, 0);
+        NSLog(@"%@", email);
+    }
+    
+    [peoplePicker dismissViewControllerAnimated:YES
+                                     completion:nil];
+    return NO;
+}
+
+- (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker
+{
+    [peoplePicker dismissViewControllerAnimated:YES
+                                     completion:nil];
 }
 
 #pragma mark - unko 

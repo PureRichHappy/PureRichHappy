@@ -92,7 +92,7 @@ CGSize const static kPRHBaseCalenderSize = {320, 350};
     
     self.titleField = [[JVFloatLabeledTextField alloc] initWithFrame:
                                            CGRectMake(kJVFieldHMargin, topOffset, self.view.frame.size.width - 2 * kJVFieldHMargin, kJVFieldHeight)];
-    self.titleField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"Title", @"")
+    self.titleField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"目標", @"")
                                                                        attributes:@{NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
     self.titleField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
     self.titleField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
@@ -110,7 +110,7 @@ CGSize const static kPRHBaseCalenderSize = {320, 350};
     
     self.limitField = [[JVFloatLabeledTextField alloc] initWithFrame:
                                            CGRectMake(kJVFieldHMargin, div1.frame.origin.y + div1.frame.size.height, 320.0f, kJVFieldHeight)];
-    self.limitField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"Limit", @"")
+    self.limitField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"期限", @"")
                                                                        attributes:@{NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
     self.limitField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
     self.limitField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
@@ -131,20 +131,20 @@ CGSize const static kPRHBaseCalenderSize = {320, 350};
                                                          div1.frame.origin.y + div1.frame.size.height + div2.frame.size.height,
                                                          self.view.frame.size.width - 3*kJVFieldHMargin - 1.0f,
                                                          kJVFieldHeight)];
-    self.wishField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"Wish", @"")
-                                                                          attributes:@{NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
-    self.wishField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
-    self.wishField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
-    self.wishField.floatingLabelTextColor = floatingLabelColor;
-    self.wishField.layer.borderColor = [UIColor darkGrayColor].CGColor;
-    self.wishField.delegate = self;
-    [self.view addSubview:self.wishField];
-    
-    UIView *div3 = [UIView new];
-    div3.frame = CGRectMake(kJVFieldHMargin, self.limitField.frame.origin.y + self.limitField.frame.size.height,
-                            self.view.frame.size.width - 2*kJVFieldHMargin, 1.0f);
-    div3.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3f];
-    [self.view addSubview:div3];
+//    self.wishField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"Wish", @"")
+//                                                                          attributes:@{NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
+//    self.wishField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
+//    self.wishField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
+//    self.wishField.floatingLabelTextColor = floatingLabelColor;
+//    self.wishField.layer.borderColor = [UIColor darkGrayColor].CGColor;
+//    self.wishField.delegate = self;
+//    [self.view addSubview:self.wishField];
+//    
+//    UIView *div3 = [UIView new];
+//    div3.frame = CGRectMake(kJVFieldHMargin, self.limitField.frame.origin.y + self.limitField.frame.size.height,
+//                            self.view.frame.size.width - 2*kJVFieldHMargin, 1.0f);
+//    div3.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3f];
+//    [self.view addSubview:div3];
     
     [self.titleField becomeFirstResponder];
     

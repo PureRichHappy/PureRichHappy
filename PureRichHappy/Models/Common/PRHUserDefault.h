@@ -10,4 +10,5 @@
 
 @interface PRHUserDefault : GVUserDefaults
 @property (nonatomic, weak) NSNumber *isDoneTutorial;
+@property (nonatomic, weak) NSNumber *isDoneAddressBook;
 @end
