@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.4.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - AYVibrantButton (1.0.3)
   - BlocksKit (2.2.5):
     - BlocksKit/All
   - BlocksKit/All (2.2.5):
@@ -35,11 +36,17 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - CKCalendar (1.0.0)
+  - FXBlurView (1.6.2)
+  - JazzHands (0.1.0)
+  - JVFloatLabeledTextField (0.0.9)
   - MagicalRecord (2.2):
     - MagicalRecord/Core
   - MagicalRecord/Core (2.2)
+  - MJPopupViewController (0.4)
   - MYBlurIntroductionView (1.0.3)
   - pop (1.0.7)
+  - RDVCalendarView (1.0.7)
   - SDWebImage (3.7.1):
     - SDWebImage/Core
   - SDWebImage/Core (3.7.1)
@@ -50,10 +57,17 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - AYVibrantButton
   - BlocksKit
+  - CKCalendar
+  - FXBlurView
+  - JazzHands
+  - JVFloatLabeledTextField
   - MagicalRecord
+  - MJPopupViewController
   - MYBlurIntroductionView
   - pop
+  - RDVCalendarView
   - SDWebImage
   - SVProgressHUD
   - TapkuLibrary
@@ -61,10 +75,17 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
+  AYVibrantButton: 6ef08db44395e9b819560191a048297be2e8b727
   BlocksKit: 4439e7f30a9f90743462ca63545a15c1f4304cef
+  CKCalendar: a361e9851d97e266f4e38dd50e2c57478706cc09
+  FXBlurView: 47496afc9160097fa34af35fc4b310bd85d65dca
+  JazzHands: 828e9d0d6609fdc9089d8049d64dd2ab45179d13
+  JVFloatLabeledTextField: b6c7d824d231b3c01d14692feada878808480af8
   MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
+  MJPopupViewController: b087684832981731f3d11b7a2ae6293a9073e011
   MYBlurIntroductionView: 6caf60805eaa555538aba9e2615820fd6f07cd23
   pop: 2f14a1ea61339767af9e66741b418c831b3844df
+  RDVCalendarView: c0b761eedd0a3007cad3981795776b03894bd2d2
   SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
   SVProgressHUD: 5034c6e22b8c2ca3e09402e48d41ed0340aa1c50
   TapkuLibrary: dc047de085cf71b49edb5a02eccc61595f460433

@@ -7,8 +7,12 @@
 //
 
 #import "PRHGoalDescriptionViewController.h"
+#import "Goal.h"
 
 @interface PRHGoalDescriptionViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *titleTextArea;
+@property (weak, nonatomic) IBOutlet UITextField *limitTextArea;
+@property (weak, nonatomic) IBOutlet UITextField *wishTextArea;
 
 @end
 
@@ -20,10 +24,16 @@
 	// Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
+- (void)saveGoal
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    Goal *goal = [Goal MR_createEntity];
+    goal.title = [self.titleTextArea text];
+    goal.limit = [NSDate date];
+    goal.need = [self.wishTextArea text];
+    goal.isAchivement = NO;
+    goal.wish = nil;
+    
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }
 
 @end

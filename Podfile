@@ -12,6 +12,12 @@ target "PureRichHappy" do
     pod 'MYBlurIntroductionView'
     pod 'MagicalRecord'
     pod 'JazzHands'
+    pod 'FXBlurView'
+    pod 'MJPopupViewController'
+    pod 'AYVibrantButton'
+    pod 'JVFloatLabeledTextField'
+    pod 'CKCalendar'
+    pod 'RDVCalendarView'
 end
 
 target "PureRichHappyTests" do

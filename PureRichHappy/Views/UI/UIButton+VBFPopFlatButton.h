@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <VBFPopFlatButton.h>
+#import <POP.h>
 
 @interface UIButton (VBFPopFlatButton)
 + (VBFPopFlatButton *)getCunstomPopFlatButton:(id)target selector:(SEL)selector;
+- (void)tapAnimate;
 
 @end
 
@@ -28,6 +30,16 @@
                           action:selector
                 forControlEvents:UIControlEventTouchUpInside];
     return flatRoundedButton;
+}
+
+- (void)tapAnimate
+{
+//    POPSpringAnimation *anim =
+//    [POPSpringAnimation animationWithPropertyNamed:kPOPLayerBounds];
+//    anim.toValue = [NSValue valueWithCGRect:CGRectMake(0, 0, 35, 35)];
+//    anim.springSpeed = 5.0f;
+//    anim.springBounciness = 24.0f;
+//    [self pop_addAnimation:anim forKey:@"size"];
 }
 
 @end

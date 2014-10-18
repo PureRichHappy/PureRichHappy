@@ -8,6 +8,10 @@
 
 #import "PRHGoalCell.h"
 
+@interface PRHGoalCell ()
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@end
+
 CGFloat static cellHeight = 44;
 
 @implementation PRHGoalCell
@@ -24,7 +28,7 @@ CGFloat static cellHeight = 44;
 
 - (void)setGoal:(Goal *)goal
 {
-    
+    self.titleLabel.text = goal.title;
 }
 
 @end
