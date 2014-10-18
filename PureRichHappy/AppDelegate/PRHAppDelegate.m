@@ -16,6 +16,11 @@
 {
     // Override point for customization after application launch.
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"prhdb.sqlite"];
+    NSDictionary *defaults = @{
+                               @"isDoneTutorial": @NO
+                               };
+    
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
     return YES;
 }
 							

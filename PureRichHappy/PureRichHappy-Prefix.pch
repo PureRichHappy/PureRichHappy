@@ -14,6 +14,7 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <CoreData+MagicalRecord.h>
+    #import "PRHUserDefault.h"
 #endif
 
 #define SCREEN_BOUNDS   ([UIScreen mainScreen].bounds)

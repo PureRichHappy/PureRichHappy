@@ -9,11 +9,15 @@
 #import "PRHGoalListViewController.h"
 #import "PRHGoalCell.h"
 #import "Goal.h"
+#import "Wish.h"
 #import "ZFModalTransitionAnimator.h"
 #import "JVFloatLabeledTextFieldViewController.h"
 #import <AHKActionSheet.h>
+#import <TOWebViewController.h>
+#import <UIActionSheet+BlocksKit.h>
+#import <MYBlurIntroductionView.h>
 
-@interface PRHGoalListViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface PRHGoalListViewController () <UITableViewDataSource, UITableViewDelegate, MYIntroductionDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) VBFPopFlatButton *pfButton;
 @property (nonatomic, strong) ZFModalTransitionAnimator *animator;
@@ -50,6 +54,9 @@
     [fetchedResultsController performFetch:nil];
     self.fetchedResultsController = fetchedResultsController;
     [self.fetchedResultsController performFetch:nil];
+    if (![PRHUserDefault standardUserDefaults].isDoneTutorial.boolValue) {
+        [self buildIntro];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -98,16 +105,19 @@
 {
     Goal *goal = [self.fetchedResultsController objectAtIndexPath:indexPath];
     AHKActionSheet *actionSheet = [[AHKActionSheet alloc] initWithTitle:nil];
-    [actionSheet setTitle:goal.title];
+    [actionSheet setTitle:[NSString stringWithFormat:@"%@,\n%@",goal.title, goal.wish.uri]];
     [actionSheet addButtonWithTitle:@"達成"
                                type:AHKActionSheetButtonTypeDefault
                             handler:^(AHKActionSheet *as) {
                                 goal.isAchivement = @YES;
                                 [self refreshTableView];
+                                [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
                             }];
     [actionSheet addButtonWithTitle:@"削除" type:AHKActionSheetButtonTypeDestructive
                             handler:^(AHKActionSheet *actionSheet) {
-                                
+                                [goal MR_deleteEntity];
+                                [self refreshTableView];
+                                [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
                             }];
     [actionSheet show];
 }
@@ -129,6 +139,75 @@
     [self presentViewController:modalVC animated:YES completion:nil];   // create animator object with instance of modal view controller
 }
 
+- (void)didTapActionWebView
+{
+    UIActionSheet *actionSheet = [UIActionSheet bk_actionSheetWithTitle:@"actionsheet"];
+    [actionSheet bk_addButtonWithTitle:@"WishListを登録" handler:^{
+        
+    }];
+    [actionSheet bk_setCancelButtonWithTitle:@"キャンセル"
+                                     handler:^{
+                                         
+                                     }];
+    [actionSheet showInView:[[[UIApplication sharedApplication] windows] objectAtIndex:0]];
+}
+
+#pragma mark - introduction view
+
+-(void)buildIntro{
+    //Create Stock Panel with header
+    //Create Stock Panel With Image
+    MYIntroductionPanel *panel1 = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
+                                                                       title:@"Onedaryについて"
+                                                                 description:@"Onedaryは、自分の目標管理におねだり機能をつけることによって、モチベーション高く目標を達成することをサポートするサービスです。"];
+    MYIntroductionPanel *panel2 = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
+                                                                       title:@"おねだりについて"
+                                                                 description:@"目標達成時に、誰か（親や嫁など）にAmazonのWishリストを一緒に送ることで、頑張った自分へのご褒美をもらっちゃうことを目指しています。"];
+    MYIntroductionPanel *panel3 = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
+                                                                       title:@"はじめよう"
+                                                                 description:@"まずはAmazonのWishListを登録しましょう。"];
+    //Add panels to an array
+    NSArray *panels = @[panel1, panel2, panel3];
+    
+    //Create the introduction view and set its delegate
+    MYBlurIntroductionView *introductionView = [[MYBlurIntroductionView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    introductionView.delegate = self;
+    [introductionView setBackgroundColor:[UIColor colorWithRed:90.0f/255.0f green:175.0f/255.0f blue:113.0f/255.0f alpha:0.95]];
+    
+    //Build the introduction with desired panels
+    [introductionView buildIntroductionWithPanels:panels];
+    
+    //Add the introduction to your view
+    [self.view addSubview:introductionView];
+}
+
+-(void)introduction:(MYBlurIntroductionView *)introductionView didChangeToPanel:(MYIntroductionPanel *)panel withIndex:(NSInteger)panelIndex{
+    NSLog(@"Introduction did change to panel %ld", (long)panelIndex);
+    
+    //You can edit introduction view properties right from the delegate method!
+    //If it is the first panel, change the color to green!
+    if (panelIndex == 0) {
+        [introductionView setBackgroundColor:[UIColor colorWithRed:90.0f/255.0f green:175.0f/255.0f blue:113.0f/255.0f alpha:0.65]];
+    }
+    //If it is the second panel, change the color to blue!
+    else if (panelIndex == 1){
+        [introductionView setBackgroundColor:[UIColor colorWithRed:50.0f/255.0f green:79.0f/255.0f blue:133.0f/255.0f alpha:0.65]];
+    }
+}
+
+- (void)introduction:(MYBlurIntroductionView *)introductionView didFinishWithType:(MYFinishType)finishType
+{
+    [PRHUserDefault standardUserDefaults].isDoneTutorial = @YES;
+    NSURL *url = [NSURL URLWithString:@"http://www.amazon.co.jp/gp/registry/wishlist"];
+    TOWebViewController *webViewController = [[TOWebViewController alloc] initWithURL:url];
+    [self presentViewController:[[UINavigationController alloc] initWithRootViewController:webViewController]
+                       animated:YES completion:^{
+                           [webViewController.actionButton addTarget:self
+                                                              action:@selector(didTapActionWebView)
+                                                    forControlEvents:UIControlEventTouchUpInside];
+                       }];   // create animator object with instance of modal view controller
+}
+
 #pragma mark - unko 
 
 - (void)refreshTableView
@@ -137,23 +216,6 @@
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
                   withRowAnimation:UITableViewRowAnimationAutomatic];
 }
-
-//- (void)test:(id)sender
-//{
-//    Goal *goal = [Goal MR_createEntity];
-//    
-//    int rand = arc4random_uniform(100);
-//    goal.title = [NSString stringWithFormat:@"タイトルタイトル %d", rand];
-//    goal.limit = [NSDate date];
-//    goal.need = @"なんだろう";
-//    goal.isAchivement = NO;
-//    goal.wish = nil;
-//    
-//    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-//    self.goals = [Goal MR_findAll];
-//    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
-//                  withRowAnimation:UITableViewRowAnimationAutomatic];
-//}
 
 - (void)testDelete:(id)sender
 {

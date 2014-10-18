@@ -33,6 +33,7 @@
 		1F64642519F256A200257769 /* PRHGoalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F64642419F256A200257769 /* PRHGoalCell.xib */; };
 		1F64642819F25D2B00257769 /* PRHGoalDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F64642719F25D2B00257769 /* PRHGoalDescriptionViewController.m */; };
 		1F8A6C8719F27A36004727D5 /* ZFModalTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A6C8619F27A36004727D5 /* ZFModalTransitionAnimator.m */; };
+		1FB9D7FA19F30CCC00337088 /* PRHUserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB9D7F919F30CCC00337088 /* PRHUserDefault.m */; };
 		D5F3301F10F64DD1A1A58D31 /* libPods-PureRichHappy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 872FFE7B3CC045179C57C064 /* libPods-PureRichHappy.a */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +91,8 @@
 		1F64642A19F25F0000257769 /* UIButton+VBFPopFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+VBFPopFlatButton.h"; sourceTree = "<group>"; };
 		1F8A6C8519F27A36004727D5 /* ZFModalTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFModalTransitionAnimator.h; sourceTree = "<group>"; };
 		1F8A6C8619F27A36004727D5 /* ZFModalTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFModalTransitionAnimator.m; sourceTree = "<group>"; };
+		1FB9D7F819F30CCC00337088 /* PRHUserDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRHUserDefault.h; sourceTree = "<group>"; };
+		1FB9D7F919F30CCC00337088 /* PRHUserDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRHUserDefault.m; sourceTree = "<group>"; };
 		872FFE7B3CC045179C57C064 /* libPods-PureRichHappy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PureRichHappy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -256,6 +259,8 @@
 			children = (
 				1F64641919F2548000257769 /* PRHModelManager.h */,
 				1F64641A19F2548000257769 /* PRHModelManager.m */,
+				1FB9D7F819F30CCC00337088 /* PRHUserDefault.h */,
+				1FB9D7F919F30CCC00337088 /* PRHUserDefault.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -456,6 +461,7 @@
 				1F62EF1019F28E07004F206B /* JVFloatLabeledTextFieldViewController.m in Sources */,
 				1F64641B19F2548000257769 /* PRHModelManager.m in Sources */,
 				1F6463F819F2454600257769 /* PRHAppDelegate.m in Sources */,
+				1FB9D7FA19F30CCC00337088 /* PRHUserDefault.m in Sources */,
 				1F8A6C8719F27A36004727D5 /* ZFModalTransitionAnimator.m in Sources */,
 				1F64640919F2530900257769 /* Wish.m in Sources */,
 				1F64642319F2568C00257769 /* PRHGoalCell.m in Sources */,
@@ -586,10 +592,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: takayuki sei (AMN5K22Z92)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PureRichHappy/PureRichHappy-Prefix.pch";
 				INFOPLIST_FILE = "PureRichHappy/PureRichHappy-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "54ea7add-95ae-4ea2-b875-c3dd9071a44b";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -600,10 +608,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: takayuki sei (YT838T8CB7)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PureRichHappy/PureRichHappy-Prefix.pch";
 				INFOPLIST_FILE = "PureRichHappy/PureRichHappy-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "361083f0-c735-452e-b7d4-27ef55eecb4e";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -32,6 +32,7 @@
 #import "JVFloatLabeledTextField.h"
 #import "JVFloatLabeledTextView.h"
 #import "Goal.h"
+#import "Wish.h"
 #import <RDVCalendarView.h>
 #import "UIButton+VBFPopFlatButton.h"
 
@@ -44,7 +45,7 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
 
 CGFloat const static kPRHCalenderBeginY = -568;
 CGFloat const static kPRHCalenderShowY = 0;
-CGSize const static kPRHBaseCalenderSize = {320, 400};
+CGSize const static kPRHBaseCalenderSize = {320, 350};
 
 @interface JVFloatLabeledTextFieldViewController () <UITextFieldDelegate, RDVCalendarViewDelegate>
 
@@ -165,7 +166,10 @@ CGSize const static kPRHBaseCalenderSize = {320, 400};
     goal.limit = self.limitDate;
     goal.need = [self.wishField text];
     goal.isAchivement = @NO;
-    goal.wish = nil;
+    
+    Wish *wish = [Wish MR_createEntity];
+    wish.uri = self.wishField.text;
+    goal.wish = wish;
     
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }

@@ -20,6 +20,8 @@ target "PureRichHappy" do
     pod 'RDVCalendarView'
     pod 'AFViewShaker'
     pod 'AHKActionSheet'
+    pod 'TOWebViewController'
+    pod 'GVUserDefaults'
 end
 
 target "PureRichHappyTests" do

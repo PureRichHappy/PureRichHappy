@@ -40,6 +40,7 @@ PODS:
     - BlocksKit/DynamicDelegate
   - CKCalendar (1.0.0)
   - FXBlurView (1.6.2)
+  - GVUserDefaults (0.9.5)
   - JazzHands (0.1.0)
   - JVFloatLabeledTextField (0.0.9)
   - MagicalRecord (2.2):
@@ -54,6 +55,7 @@ PODS:
   - SDWebImage/Core (3.7.1)
   - SVProgressHUD (1.0)
   - TapkuLibrary (0.3.3)
+  - TOWebViewController (2.0.14)
   - VBFPopFlatButton (0.0.5):
     - pop
 
@@ -65,6 +67,7 @@ DEPENDENCIES:
   - BlocksKit
   - CKCalendar
   - FXBlurView
+  - GVUserDefaults
   - JazzHands
   - JVFloatLabeledTextField
   - MagicalRecord
@@ -75,6 +78,7 @@ DEPENDENCIES:
   - SDWebImage
   - SVProgressHUD
   - TapkuLibrary
+  - TOWebViewController
   - VBFPopFlatButton
 
 SPEC CHECKSUMS:
@@ -85,6 +89,7 @@ SPEC CHECKSUMS:
   BlocksKit: 4439e7f30a9f90743462ca63545a15c1f4304cef
   CKCalendar: a361e9851d97e266f4e38dd50e2c57478706cc09
   FXBlurView: 47496afc9160097fa34af35fc4b310bd85d65dca
+  GVUserDefaults: 66c524fc1709b2d95db774f4bb665dfad4671168
   JazzHands: 828e9d0d6609fdc9089d8049d64dd2ab45179d13
   JVFloatLabeledTextField: b6c7d824d231b3c01d14692feada878808480af8
   MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
@@ -95,6 +100,7 @@ SPEC CHECKSUMS:
   SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
   SVProgressHUD: 5034c6e22b8c2ca3e09402e48d41ed0340aa1c50
   TapkuLibrary: dc047de085cf71b49edb5a02eccc61595f460433
+  TOWebViewController: d3eee5342e5f8508cc87107c96544f5dff01b802
   VBFPopFlatButton: 023eb57c9c8e0a77d1cf926621085b0727b70b15
 
 COCOAPODS: 0.33.1
