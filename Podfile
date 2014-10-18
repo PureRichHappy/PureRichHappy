@@ -4,8 +4,13 @@
 target "PureRichHappy" do
     pod 'AFNetworking'
     pod 'SDWebImage'
-    pod 'MBProgressHUD'
+    pod 'SVProgressHUD'
     pod 'BlocksKit'
+    pod 'pop'
+    pod 'TapkuLibrary'
+    pod 'VBFPopFlatButton'
+    pod 'MYBlurIntroductionView'
+    pod 'MagicalRecord'
 end
 
 target "PureRichHappyTests" do

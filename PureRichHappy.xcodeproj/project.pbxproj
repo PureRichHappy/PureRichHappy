@@ -12,15 +12,17 @@
 		1F6463BD19F166BA00257769 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F6463BC19F166BA00257769 /* UIKit.framework */; };
 		1F6463C319F166BB00257769 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F6463C119F166BB00257769 /* InfoPlist.strings */; };
 		1F6463C519F166BB00257769 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6463C419F166BB00257769 /* main.m */; };
-		1F6463C919F166BB00257769 /* PRHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6463C819F166BB00257769 /* PRHAppDelegate.m */; };
 		1F6463CC19F166BB00257769 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F6463CA19F166BB00257769 /* Main.storyboard */; };
-		1F6463CF19F166BB00257769 /* PRHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6463CE19F166BB00257769 /* PRHViewController.m */; };
 		1F6463D119F166BB00257769 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F6463D019F166BB00257769 /* Images.xcassets */; };
 		1F6463D819F166BB00257769 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F6463D719F166BB00257769 /* XCTest.framework */; };
 		1F6463D919F166BB00257769 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F6463B819F166BA00257769 /* Foundation.framework */; };
 		1F6463DA19F166BB00257769 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F6463BC19F166BA00257769 /* UIKit.framework */; };
 		1F6463E219F166BB00257769 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F6463E019F166BB00257769 /* InfoPlist.strings */; };
 		1F6463E419F166BB00257769 /* PureRichHappyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6463E319F166BB00257769 /* PureRichHappyTests.m */; };
+		1F6463F819F2454600257769 /* PRHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6463F219F2454600257769 /* PRHAppDelegate.m */; };
+		1F6463F919F2454600257769 /* PRHGoalListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6463F519F2454600257769 /* PRHGoalListViewController.m */; };
+		1F6463FA19F2454600257769 /* PRHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6463F719F2454600257769 /* PRHViewController.m */; };
+		D5F3301F10F64DD1A1A58D31 /* libPods-PureRichHappy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 872FFE7B3CC045179C57C064 /* libPods-PureRichHappy.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1AEFB4E3D2BF424BA0C23448 /* Pods-PureRichHappy.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PureRichHappy.xcconfig"; path = "Pods/Pods-PureRichHappy.xcconfig"; sourceTree = "<group>"; };
 		1F6463B519F166BA00257769 /* PureRichHappy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PureRichHappy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F6463B819F166BA00257769 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1F6463BA19F166BA00257769 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -42,17 +45,20 @@
 		1F6463C219F166BB00257769 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1F6463C419F166BB00257769 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F6463C619F166BB00257769 /* PureRichHappy-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PureRichHappy-Prefix.pch"; sourceTree = "<group>"; };
-		1F6463C719F166BB00257769 /* PRHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRHAppDelegate.h; sourceTree = "<group>"; };
-		1F6463C819F166BB00257769 /* PRHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRHAppDelegate.m; sourceTree = "<group>"; };
 		1F6463CB19F166BB00257769 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1F6463CD19F166BB00257769 /* PRHViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRHViewController.h; sourceTree = "<group>"; };
-		1F6463CE19F166BB00257769 /* PRHViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRHViewController.m; sourceTree = "<group>"; };
 		1F6463D019F166BB00257769 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1F6463D619F166BB00257769 /* PureRichHappyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PureRichHappyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F6463D719F166BB00257769 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		1F6463DF19F166BB00257769 /* PureRichHappyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PureRichHappyTests-Info.plist"; sourceTree = "<group>"; };
 		1F6463E119F166BB00257769 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1F6463E319F166BB00257769 /* PureRichHappyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PureRichHappyTests.m; sourceTree = "<group>"; };
+		1F6463F119F2454600257769 /* PRHAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRHAppDelegate.h; sourceTree = "<group>"; };
+		1F6463F219F2454600257769 /* PRHAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRHAppDelegate.m; sourceTree = "<group>"; };
+		1F6463F419F2454600257769 /* PRHGoalListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRHGoalListViewController.h; sourceTree = "<group>"; };
+		1F6463F519F2454600257769 /* PRHGoalListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRHGoalListViewController.m; sourceTree = "<group>"; };
+		1F6463F619F2454600257769 /* PRHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRHViewController.h; sourceTree = "<group>"; };
+		1F6463F719F2454600257769 /* PRHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRHViewController.m; sourceTree = "<group>"; };
+		872FFE7B3CC045179C57C064 /* libPods-PureRichHappy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PureRichHappy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,7 @@
 				1F6463BB19F166BA00257769 /* CoreGraphics.framework in Frameworks */,
 				1F6463BD19F166BA00257769 /* UIKit.framework in Frameworks */,
 				1F6463B919F166BA00257769 /* Foundation.framework in Frameworks */,
+				D5F3301F10F64DD1A1A58D31 /* libPods-PureRichHappy.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +93,7 @@
 				1F6463DD19F166BB00257769 /* PureRichHappyTests */,
 				1F6463B719F166BA00257769 /* Frameworks */,
 				1F6463B619F166BA00257769 /* Products */,
+				1AEFB4E3D2BF424BA0C23448 /* Pods-PureRichHappy.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +113,7 @@
 				1F6463BA19F166BA00257769 /* CoreGraphics.framework */,
 				1F6463BC19F166BA00257769 /* UIKit.framework */,
 				1F6463D719F166BB00257769 /* XCTest.framework */,
+				872FFE7B3CC045179C57C064 /* libPods-PureRichHappy.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -112,11 +121,10 @@
 		1F6463BE19F166BA00257769 /* PureRichHappy */ = {
 			isa = PBXGroup;
 			children = (
-				1F6463C719F166BB00257769 /* PRHAppDelegate.h */,
-				1F6463C819F166BB00257769 /* PRHAppDelegate.m */,
+				1F6463F019F2454600257769 /* AppDelegate */,
+				1F6463F319F2454600257769 /* ViewControllers */,
 				1F6463CA19F166BB00257769 /* Main.storyboard */,
-				1F6463CD19F166BB00257769 /* PRHViewController.h */,
-				1F6463CE19F166BB00257769 /* PRHViewController.m */,
+				1F6463FB19F24E5600257769 /* Models */,
 				1F6463D019F166BB00257769 /* Images.xcassets */,
 				1F6463BF19F166BA00257769 /* Supporting Files */,
 			);
@@ -152,6 +160,33 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		1F6463F019F2454600257769 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				1F6463F119F2454600257769 /* PRHAppDelegate.h */,
+				1F6463F219F2454600257769 /* PRHAppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		1F6463F319F2454600257769 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1F6463F419F2454600257769 /* PRHGoalListViewController.h */,
+				1F6463F519F2454600257769 /* PRHGoalListViewController.m */,
+				1F6463F619F2454600257769 /* PRHViewController.h */,
+				1F6463F719F2454600257769 /* PRHViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1F6463FB19F24E5600257769 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,9 +194,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F6463E719F166BB00257769 /* Build configuration list for PBXNativeTarget "PureRichHappy" */;
 			buildPhases = (
+				954C334B4A274942AA54EC07 /* Check Pods Manifest.lock */,
 				1F6463B119F166BA00257769 /* Sources */,
 				1F6463B219F166BA00257769 /* Frameworks */,
 				1F6463B319F166BA00257769 /* Resources */,
+				EB34DDC86B5C4E8DA4CED71D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -245,14 +282,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		954C334B4A274942AA54EC07 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EB34DDC86B5C4E8DA4CED71D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-PureRichHappy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1F6463B119F166BA00257769 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F6463F919F2454600257769 /* PRHGoalListViewController.m in Sources */,
 				1F6463C519F166BB00257769 /* main.m in Sources */,
-				1F6463CF19F166BB00257769 /* PRHViewController.m in Sources */,
-				1F6463C919F166BB00257769 /* PRHAppDelegate.m in Sources */,
+				1F6463F819F2454600257769 /* PRHAppDelegate.m in Sources */,
+				1F6463FA19F2454600257769 /* PRHViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +445,7 @@
 		};
 		1F6463E819F166BB00257769 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AEFB4E3D2BF424BA0C23448 /* Pods-PureRichHappy.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -387,6 +459,7 @@
 		};
 		1F6463E919F166BB00257769 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AEFB4E3D2BF424BA0C23448 /* Pods-PureRichHappy.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -457,6 +530,7 @@
 				1F6463E919F166BB00257769 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1F6463EA19F166BB00257769 /* Build configuration list for PBXNativeTarget "PureRichHappyTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +539,7 @@
 				1F6463EC19F166BB00257769 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
