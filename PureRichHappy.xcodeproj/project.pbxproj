@@ -30,6 +30,7 @@
 		1F64641E19F254B000257769 /* PRHGoalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F64641D19F254B000257769 /* PRHGoalManager.m */; };
 		1F64642319F2568C00257769 /* PRHGoalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F64642219F2568C00257769 /* PRHGoalCell.m */; };
 		1F64642519F256A200257769 /* PRHGoalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F64642419F256A200257769 /* PRHGoalCell.xib */; };
+		1F64642819F25D2B00257769 /* PRHGoalDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F64642719F25D2B00257769 /* PRHGoalDescriptionViewController.m */; };
 		D5F3301F10F64DD1A1A58D31 /* libPods-PureRichHappy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 872FFE7B3CC045179C57C064 /* libPods-PureRichHappy.a */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,9 @@
 		1F64642119F2568C00257769 /* PRHGoalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRHGoalCell.h; sourceTree = "<group>"; };
 		1F64642219F2568C00257769 /* PRHGoalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRHGoalCell.m; sourceTree = "<group>"; };
 		1F64642419F256A200257769 /* PRHGoalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRHGoalCell.xib; sourceTree = "<group>"; };
+		1F64642619F25D2B00257769 /* PRHGoalDescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRHGoalDescriptionViewController.h; sourceTree = "<group>"; };
+		1F64642719F25D2B00257769 /* PRHGoalDescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRHGoalDescriptionViewController.m; sourceTree = "<group>"; };
+		1F64642A19F25F0000257769 /* UIButton+VBFPopFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+VBFPopFlatButton.h"; sourceTree = "<group>"; };
 		872FFE7B3CC045179C57C064 /* libPods-PureRichHappy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PureRichHappy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -201,6 +205,8 @@
 				1F6463F519F2454600257769 /* PRHGoalListViewController.m */,
 				1F6463F619F2454600257769 /* PRHViewController.h */,
 				1F6463F719F2454600257769 /* PRHViewController.m */,
+				1F64642619F25D2B00257769 /* PRHGoalDescriptionViewController.h */,
+				1F64642719F25D2B00257769 /* PRHGoalDescriptionViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -248,6 +254,7 @@
 		1F64641F19F2566F00257769 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1F64642919F25EDB00257769 /* UI */,
 				1F64642019F2566F00257769 /* Cells */,
 			);
 			path = Views;
@@ -261,6 +268,14 @@
 				1F64642419F256A200257769 /* PRHGoalCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		1F64642919F25EDB00257769 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1F64642A19F25F0000257769 /* UIButton+VBFPopFlatButton.h */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,6 +417,7 @@
 				1F64640619F2517500257769 /* PRHModeles.xcdatamodeld in Sources */,
 				1F64641E19F254B000257769 /* PRHGoalManager.m in Sources */,
 				1F64641219F253EC00257769 /* Goal.m in Sources */,
+				1F64642819F25D2B00257769 /* PRHGoalDescriptionViewController.m in Sources */,
 				1F64641B19F2548000257769 /* PRHModelManager.m in Sources */,
 				1F6463F819F2454600257769 /* PRHAppDelegate.m in Sources */,
 				1F64640919F2530900257769 /* Wish.m in Sources */,

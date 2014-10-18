@@ -11,6 +11,7 @@ target "PureRichHappy" do
     pod 'VBFPopFlatButton'
     pod 'MYBlurIntroductionView'
     pod 'MagicalRecord'
+    pod 'JazzHands'
 end
 
 target "PureRichHappyTests" do

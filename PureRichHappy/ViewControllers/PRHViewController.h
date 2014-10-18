@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIButton+VBFPopFlatButton.h"
 
 @interface PRHViewController : UIViewController
 
