@@ -28,6 +28,8 @@
 		1F64641519F2544600257769 /* PRHWishManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F64641419F2544600257769 /* PRHWishManager.m */; };
 		1F64641B19F2548000257769 /* PRHModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F64641A19F2548000257769 /* PRHModelManager.m */; };
 		1F64641E19F254B000257769 /* PRHGoalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F64641D19F254B000257769 /* PRHGoalManager.m */; };
+		1F64642319F2568C00257769 /* PRHGoalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F64642219F2568C00257769 /* PRHGoalCell.m */; };
+		1F64642519F256A200257769 /* PRHGoalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F64642419F256A200257769 /* PRHGoalCell.xib */; };
 		D5F3301F10F64DD1A1A58D31 /* libPods-PureRichHappy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 872FFE7B3CC045179C57C064 /* libPods-PureRichHappy.a */; };
 /* End PBXBuildFile section */
 
@@ -69,12 +71,15 @@
 		1F64640819F2530900257769 /* Wish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wish.m; sourceTree = "<group>"; };
 		1F64641019F253EC00257769 /* Goal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goal.h; sourceTree = "<group>"; };
 		1F64641119F253EC00257769 /* Goal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goal.m; sourceTree = "<group>"; };
-		1F64641319F2544600257769 /* PRHWishManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRHWishManager.h; sourceTree = "<group>"; };
+		1F64641319F2544600257769 /* PRHWishManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRHWishManager.h; path = Models/Wish/PRHWishManager.h; sourceTree = "<group>"; };
 		1F64641419F2544600257769 /* PRHWishManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRHWishManager.m; sourceTree = "<group>"; };
 		1F64641919F2548000257769 /* PRHModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRHModelManager.h; sourceTree = "<group>"; };
 		1F64641A19F2548000257769 /* PRHModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRHModelManager.m; sourceTree = "<group>"; };
 		1F64641C19F254B000257769 /* PRHGoalManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRHGoalManager.h; sourceTree = "<group>"; };
 		1F64641D19F254B000257769 /* PRHGoalManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRHGoalManager.m; sourceTree = "<group>"; };
+		1F64642119F2568C00257769 /* PRHGoalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRHGoalCell.h; sourceTree = "<group>"; };
+		1F64642219F2568C00257769 /* PRHGoalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRHGoalCell.m; sourceTree = "<group>"; };
+		1F64642419F256A200257769 /* PRHGoalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRHGoalCell.xib; sourceTree = "<group>"; };
 		872FFE7B3CC045179C57C064 /* libPods-PureRichHappy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PureRichHappy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -138,6 +143,7 @@
 		1F6463BE19F166BA00257769 /* PureRichHappy */ = {
 			isa = PBXGroup;
 			children = (
+				1F64641F19F2566F00257769 /* Views */,
 				1F6463F019F2454600257769 /* AppDelegate */,
 				1F6463F319F2454600257769 /* ViewControllers */,
 				1F6463CA19F166BB00257769 /* Main.storyboard */,
@@ -151,6 +157,7 @@
 		1F6463BF19F166BA00257769 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1F64641319F2544600257769 /* PRHWishManager.h */,
 				1F6463C019F166BB00257769 /* PureRichHappy-Info.plist */,
 				1F6463C119F166BB00257769 /* InfoPlist.strings */,
 				1F6463C419F166BB00257769 /* main.m */,
@@ -224,7 +231,6 @@
 			children = (
 				1F64640719F2530900257769 /* Wish.h */,
 				1F64640819F2530900257769 /* Wish.m */,
-				1F64641319F2544600257769 /* PRHWishManager.h */,
 				1F64641419F2544600257769 /* PRHWishManager.m */,
 			);
 			path = Wish;
@@ -237,6 +243,24 @@
 				1F64641A19F2548000257769 /* PRHModelManager.m */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		1F64641F19F2566F00257769 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1F64642019F2566F00257769 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1F64642019F2566F00257769 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1F64642119F2568C00257769 /* PRHGoalCell.h */,
+				1F64642219F2568C00257769 /* PRHGoalCell.m */,
+				1F64642419F256A200257769 /* PRHGoalCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F6463D119F166BB00257769 /* Images.xcassets in Resources */,
+				1F64642519F256A200257769 /* PRHGoalCell.xib in Resources */,
 				1F6463C319F166BB00257769 /* InfoPlist.strings in Resources */,
 				1F6463CC19F166BB00257769 /* Main.storyboard in Resources */,
 			);
@@ -380,6 +405,7 @@
 				1F64641B19F2548000257769 /* PRHModelManager.m in Sources */,
 				1F6463F819F2454600257769 /* PRHAppDelegate.m in Sources */,
 				1F64640919F2530900257769 /* Wish.m in Sources */,
+				1F64642319F2568C00257769 /* PRHGoalCell.m in Sources */,
 				1F6463FA19F2454600257769 /* PRHViewController.m in Sources */,
 				1F64641519F2544600257769 /* PRHWishManager.m in Sources */,
 			);

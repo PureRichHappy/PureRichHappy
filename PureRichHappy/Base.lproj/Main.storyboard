@@ -22,6 +22,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="8eD-1b-8sT"/>
+                    <connections>
+                        <outlet property="tableView" destination="0wG-KZ-M0A" id="usu-5l-4Wy"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="-317" y="36"/>
