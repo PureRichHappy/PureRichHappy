@@ -7,12 +7,15 @@
 //
 
 #import "PRHAppDelegate.h"
+#define MR_SHORTHAND
+#import "CoreData+MagicalRecord.h"
 
 @implementation PRHAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"prhdb.sqlite"];
     return YES;
 }
 							
@@ -41,6 +44,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [MagicalRecord cleanUp];
 }
 
 @end

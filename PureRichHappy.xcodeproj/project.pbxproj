@@ -22,6 +22,12 @@
 		1F6463F819F2454600257769 /* PRHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6463F219F2454600257769 /* PRHAppDelegate.m */; };
 		1F6463F919F2454600257769 /* PRHGoalListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6463F519F2454600257769 /* PRHGoalListViewController.m */; };
 		1F6463FA19F2454600257769 /* PRHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6463F719F2454600257769 /* PRHViewController.m */; };
+		1F64640619F2517500257769 /* PRHModeles.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F64640419F2517500257769 /* PRHModeles.xcdatamodeld */; };
+		1F64640919F2530900257769 /* Wish.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F64640819F2530900257769 /* Wish.m */; };
+		1F64641219F253EC00257769 /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F64641119F253EC00257769 /* Goal.m */; };
+		1F64641519F2544600257769 /* PRHWishManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F64641419F2544600257769 /* PRHWishManager.m */; };
+		1F64641B19F2548000257769 /* PRHModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F64641A19F2548000257769 /* PRHModelManager.m */; };
+		1F64641E19F254B000257769 /* PRHGoalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F64641D19F254B000257769 /* PRHGoalManager.m */; };
 		D5F3301F10F64DD1A1A58D31 /* libPods-PureRichHappy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 872FFE7B3CC045179C57C064 /* libPods-PureRichHappy.a */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +64,17 @@
 		1F6463F519F2454600257769 /* PRHGoalListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRHGoalListViewController.m; sourceTree = "<group>"; };
 		1F6463F619F2454600257769 /* PRHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRHViewController.h; sourceTree = "<group>"; };
 		1F6463F719F2454600257769 /* PRHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRHViewController.m; sourceTree = "<group>"; };
+		1F64640519F2517500257769 /* PRHModeles.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PRHModeles.xcdatamodel; sourceTree = "<group>"; };
+		1F64640719F2530900257769 /* Wish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wish.h; sourceTree = "<group>"; };
+		1F64640819F2530900257769 /* Wish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wish.m; sourceTree = "<group>"; };
+		1F64641019F253EC00257769 /* Goal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goal.h; sourceTree = "<group>"; };
+		1F64641119F253EC00257769 /* Goal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goal.m; sourceTree = "<group>"; };
+		1F64641319F2544600257769 /* PRHWishManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRHWishManager.h; sourceTree = "<group>"; };
+		1F64641419F2544600257769 /* PRHWishManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRHWishManager.m; sourceTree = "<group>"; };
+		1F64641919F2548000257769 /* PRHModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRHModelManager.h; sourceTree = "<group>"; };
+		1F64641A19F2548000257769 /* PRHModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRHModelManager.m; sourceTree = "<group>"; };
+		1F64641C19F254B000257769 /* PRHGoalManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRHGoalManager.h; sourceTree = "<group>"; };
+		1F64641D19F254B000257769 /* PRHGoalManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRHGoalManager.m; sourceTree = "<group>"; };
 		872FFE7B3CC045179C57C064 /* libPods-PureRichHappy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PureRichHappy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -138,6 +155,7 @@
 				1F6463C119F166BB00257769 /* InfoPlist.strings */,
 				1F6463C419F166BB00257769 /* main.m */,
 				1F6463C619F166BB00257769 /* PureRichHappy-Prefix.pch */,
+				1F64640419F2517500257769 /* PRHModeles.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -183,8 +201,42 @@
 		1F6463FB19F24E5600257769 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1F64641819F2547100257769 /* Common */,
+				1F6463FC19F250A700257769 /* Goal */,
+				1F6463FD19F250A700257769 /* Wish */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		1F6463FC19F250A700257769 /* Goal */ = {
+			isa = PBXGroup;
+			children = (
+				1F64641019F253EC00257769 /* Goal.h */,
+				1F64641119F253EC00257769 /* Goal.m */,
+				1F64641C19F254B000257769 /* PRHGoalManager.h */,
+				1F64641D19F254B000257769 /* PRHGoalManager.m */,
+			);
+			path = Goal;
+			sourceTree = "<group>";
+		};
+		1F6463FD19F250A700257769 /* Wish */ = {
+			isa = PBXGroup;
+			children = (
+				1F64640719F2530900257769 /* Wish.h */,
+				1F64640819F2530900257769 /* Wish.m */,
+				1F64641319F2544600257769 /* PRHWishManager.h */,
+				1F64641419F2544600257769 /* PRHWishManager.m */,
+			);
+			path = Wish;
+			sourceTree = "<group>";
+		};
+		1F64641819F2547100257769 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1F64641919F2548000257769 /* PRHModelManager.h */,
+				1F64641A19F2548000257769 /* PRHModelManager.m */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,8 +374,14 @@
 			files = (
 				1F6463F919F2454600257769 /* PRHGoalListViewController.m in Sources */,
 				1F6463C519F166BB00257769 /* main.m in Sources */,
+				1F64640619F2517500257769 /* PRHModeles.xcdatamodeld in Sources */,
+				1F64641E19F254B000257769 /* PRHGoalManager.m in Sources */,
+				1F64641219F253EC00257769 /* Goal.m in Sources */,
+				1F64641B19F2548000257769 /* PRHModelManager.m in Sources */,
 				1F6463F819F2454600257769 /* PRHAppDelegate.m in Sources */,
+				1F64640919F2530900257769 /* Wish.m in Sources */,
 				1F6463FA19F2454600257769 /* PRHViewController.m in Sources */,
+				1F64641519F2544600257769 /* PRHWishManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +600,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1F64640419F2517500257769 /* PRHModeles.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1F64640519F2517500257769 /* PRHModeles.xcdatamodel */,
+			);
+			currentVersion = 1F64640519F2517500257769 /* PRHModeles.xcdatamodel */;
+			path = PRHModeles.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1F6463AD19F166BA00257769 /* Project object */;
 }
